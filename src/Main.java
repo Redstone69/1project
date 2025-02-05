@@ -54,18 +54,19 @@ public class Main {
     public static void removeTask(Scanner input, ArrayList<String> tasks) {
         if (tasks.isEmpty()) {
             System.out.println("No tasks to remove.");
-            return;
-        }
+            return; }
+       
         listTasks(tasks);
         System.out.print("Enter the task number to remove: ");
         int taskNumber = input.nextInt();
         input.nextLine();
         if (taskNumber < 1 || taskNumber > tasks.size()) {
-            System.out.println("Invalid task number.");
-        } else {
+            System.out.println("Invalid task number.");}
+         
+        else {
             tasks.remove(taskNumber - 1);
-            System.out.println("Task removed.");
-        }
+            System.out.println("Task removed.");}
+        
     }
 
     public static void updateTask(Scanner input, ArrayList<String> tasks) {
@@ -79,7 +80,8 @@ public class Main {
         input.nextLine();
         if (taskNumber < 1 || taskNumber > tasks.size()) {
             System.out.println("Invalid task number.");
-        } else {
+        } 
+        else {
             System.out.print("Enter new info: ");
             String newinfo = input.nextLine();
             tasks.set(taskNumber - 1, newinfo);
@@ -93,6 +95,7 @@ public class Main {
             return;
         }
         System.out.println("Tasks:");
+        
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println((i + 1) + ". " + tasks.get(i));
         }
